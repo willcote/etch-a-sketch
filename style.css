@@ -1,19 +1,22 @@
-.grid-container {
+grid-container {
   display: flex;
   flex-direction: column;
+
+  height: 400px;
+  width: 400px;
 }
 
 .square-container {
   display: flex;
+  flex: auto;
 }
 
 .square {
-  /* border-style: solid;
+  border-style: solid;
   border-color: black;
-  border-width: 0.1px; */
-
-  height: 10px;
-  width: 10px;
+  border-width: 0.1px;
+  flex: auto;
+  /* aspect-ratio: 1 / 1; */
 }
 
 .hover {

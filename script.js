@@ -17,8 +17,10 @@ for (let i = 0; i < GRID_SIZE; i++) {
 }
 
 /* hover */
+
 squares = document.querySelectorAll(".square");
 
+// forEach needs squares to be an array instead of a nodelist
 Array.from(squares).forEach((s) => {
   s.addEventListener("mouseover", () => {
     s.classList.add("hover");
