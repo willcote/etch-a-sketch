@@ -2,12 +2,10 @@ createGrid(16);
 
 /* change resolution button */
 
-/* 
-when button is pressed:
-  prompt user for a resolution (fill in whatever current res is)
-  validate input
-  store value and use it change how many squares there are
-*/
+// when button is pressed:
+// - prompt user for a resolution (fill in whatever current res is)
+// - validate input
+// - store value and use it change how many squares there are
 
 const changeResolutionButton = document.querySelector(
   ".change-resolution-button"
@@ -16,11 +14,9 @@ const changeResolutionButton = document.querySelector(
 changeResolutionButton.addEventListener("click", changeGridResolution);
 
 function changeGridResolution() {
-  userInput = prompt("Type the desired pixel length");
-  console.log(userInput);
+  userInput = prompt("Enter canvas size (whole number from 1-100)");
   while (!validateInput(userInput))
-    userInput = prompt("please choose a whole number from 1-50");
-
+    userInput = prompt("please choose a whole number from 1-100");
   createGrid(userInput);
 }
 
@@ -29,15 +25,15 @@ function validateInput(input) {
   // - an integer
   // - GREATER THAN 0
   // - LESS THAN <some number, probably like 50>
+  const MAX_SIZE = 100;
 
   if (
     input == parseInt(input, 10) &&
     parseInt(input, 10) > 0 &&
-    parseInt(input, 10) <= 50
+    parseInt(input, 10) <= MAX_SIZE
   )
     return true;
 }
-/* create 16 x 16 grid */
 
 function createGrid(numSquares) {
   const gridContainer = document.querySelector(".grid-container");

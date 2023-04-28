@@ -17,6 +17,9 @@ body,
 }
 
 .grid-container {
+  border-style: solid;
+  border-color: black;
+  border-width: 0.1px;
   display: flex;
   flex-direction: column;
   height: 400px;
@@ -29,9 +32,6 @@ body,
 }
 
 .square {
-  border-style: solid;
-  border-color: black;
-  border-width: 0.1px;
   flex: auto;
   /* aspect-ratio: 1 / 1; */
 }
