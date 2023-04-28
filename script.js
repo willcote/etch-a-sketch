@@ -2,11 +2,14 @@ const gridContainer = document.querySelector(".grid-container");
 
 const GRID_SIZE = 16;
 for (let i = 0; i < GRID_SIZE; i++) {
-  for (let j = 0; j < GRID_SIZE; j++) {
-    const gridSquare = document.createElement("div");
-    gridSquare.classList.add("square");
-    gridSquare.setAttribute("style", "border-color: black; border-style");
+  const squareContainer = document.createElement("div");
+  squareContainer.classList.add("square-container");
+  gridContainer.appendChild(squareContainer);
 
-    gridContainer.appendChild(gridSquare);
+  for (let j = 0; j < GRID_SIZE; j++) {
+    const square = document.createElement("div");
+    square.classList.add("square");
+
+    squareContainer.appendChild(square);
   }
 }
