@@ -62,7 +62,6 @@ function clearSquares(container) {
   Array.from(gridContents).forEach((gridRow) => {
     gridRow.remove();
   });
-  console.log(container.childNodes);
 }
 
 function addHoverFunctionality() {
@@ -72,10 +71,17 @@ function addHoverFunctionality() {
   // forEach needs squares to be an array instead of a nodelist
   Array.from(squares).forEach((s) => {
     s.addEventListener("mouseover", () => {
-      color = getRandomColor();
-      s.setAttribute("style", `background-color: ${color}`);
+      /* -- random color -- */
 
-      // s.classList.add("hover");
+      // color = getRandomColor();
+      // s.setAttribute("style", `background-color: ${color}`);
+
+      /* -- opacity change -- */
+
+      s.classList.add("hover");
+      if (!s.style.opacity) s.style.opacity = 0.1;
+      else if (s.style.opacity < 1)
+        s.style.opacity = parseFloat(s.style.opacity) + 0.1;
     });
   });
 }
