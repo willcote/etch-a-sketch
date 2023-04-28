@@ -70,8 +70,6 @@ function clearSquares(container) {
 }
 
 function addHoverFunctionality() {
-  /* hover */
-
   squares = document.querySelectorAll(".square");
 
   // forEach needs squares to be an array instead of a nodelist
