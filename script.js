@@ -67,11 +67,24 @@ function clearSquares(container) {
 
 function addHoverFunctionality() {
   squares = document.querySelectorAll(".square");
+  let color;
 
   // forEach needs squares to be an array instead of a nodelist
   Array.from(squares).forEach((s) => {
     s.addEventListener("mouseover", () => {
-      s.classList.add("hover");
+      color = getRandomColor();
+      s.setAttribute("style", `background-color: ${color}`);
+
+      // s.classList.add("hover");
     });
   });
+}
+
+function getRandomColor() {
+  let randomHexColor =
+    "#" +
+    Math.floor((Math.random() * 0xffffff) << 0)
+      .toString(16)
+      .padStart(6, "0");
+  return randomHexColor;
 }
