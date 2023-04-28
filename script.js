@@ -59,7 +59,7 @@ function createGrid(numSquares) {
 
 function clearSquares(container) {
   let gridContents = container.childNodes;
-  Array.from(gridContents).forEach(function (gridRow) {
+  Array.from(gridContents).forEach((gridRow) => {
     gridRow.remove();
   });
   console.log(container.childNodes);
