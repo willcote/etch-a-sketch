@@ -1,3 +1,5 @@
+/* create 16 x 16 grid */
+
 const gridContainer = document.querySelector(".grid-container");
 
 const GRID_SIZE = 16;
@@ -13,3 +15,12 @@ for (let i = 0; i < GRID_SIZE; i++) {
     squareContainer.appendChild(square);
   }
 }
+
+/* hover */
+squares = document.querySelectorAll(".square");
+
+Array.from(squares).forEach((s) => {
+  s.addEventListener("mouseover", () => {
+    s.classList.add("hover");
+  });
+});
